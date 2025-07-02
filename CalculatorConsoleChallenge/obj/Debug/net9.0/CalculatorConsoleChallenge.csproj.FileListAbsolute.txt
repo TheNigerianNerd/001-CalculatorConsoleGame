@@ -1,0 +1,14 @@
+C:\The Nigerian Nerd\Programming\001-CalculatorConsoleGame\CalculatorConsoleChallenge\bin\Debug\net9.0\CalculatorConsoleChallenge.exe
+C:\The Nigerian Nerd\Programming\001-CalculatorConsoleGame\CalculatorConsoleChallenge\bin\Debug\net9.0\CalculatorConsoleChallenge.deps.json
+C:\The Nigerian Nerd\Programming\001-CalculatorConsoleGame\CalculatorConsoleChallenge\bin\Debug\net9.0\CalculatorConsoleChallenge.runtimeconfig.json
+C:\The Nigerian Nerd\Programming\001-CalculatorConsoleGame\CalculatorConsoleChallenge\bin\Debug\net9.0\CalculatorConsoleChallenge.dll
+C:\The Nigerian Nerd\Programming\001-CalculatorConsoleGame\CalculatorConsoleChallenge\bin\Debug\net9.0\CalculatorConsoleChallenge.pdb
+C:\The Nigerian Nerd\Programming\001-CalculatorConsoleGame\CalculatorConsoleChallenge\obj\Debug\net9.0\CalculatorConsoleChallenge.GeneratedMSBuildEditorConfig.editorconfig
+C:\The Nigerian Nerd\Programming\001-CalculatorConsoleGame\CalculatorConsoleChallenge\obj\Debug\net9.0\CalculatorConsoleChallenge.AssemblyInfoInputs.cache
+C:\The Nigerian Nerd\Programming\001-CalculatorConsoleGame\CalculatorConsoleChallenge\obj\Debug\net9.0\CalculatorConsoleChallenge.AssemblyInfo.cs
+C:\The Nigerian Nerd\Programming\001-CalculatorConsoleGame\CalculatorConsoleChallenge\obj\Debug\net9.0\CalculatorConsoleChallenge.csproj.CoreCompileInputs.cache
+C:\The Nigerian Nerd\Programming\001-CalculatorConsoleGame\CalculatorConsoleChallenge\obj\Debug\net9.0\CalculatorConsoleChallenge.dll
+C:\The Nigerian Nerd\Programming\001-CalculatorConsoleGame\CalculatorConsoleChallenge\obj\Debug\net9.0\refint\CalculatorConsoleChallenge.dll
+C:\The Nigerian Nerd\Programming\001-CalculatorConsoleGame\CalculatorConsoleChallenge\obj\Debug\net9.0\CalculatorConsoleChallenge.pdb
+C:\The Nigerian Nerd\Programming\001-CalculatorConsoleGame\CalculatorConsoleChallenge\obj\Debug\net9.0\CalculatorConsoleChallenge.genruntimeconfig.cache
+C:\The Nigerian Nerd\Programming\001-CalculatorConsoleGame\CalculatorConsoleChallenge\obj\Debug\net9.0\ref\CalculatorConsoleChallenge.dll
