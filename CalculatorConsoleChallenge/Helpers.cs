@@ -28,17 +28,18 @@ internal class Helpers
         Console.WriteLine("---------------------------------------------------------");
         foreach (Game game in gamesToPrint)
         {
-            Console.WriteLine($"{game.Date} - {game.Type}: {game.Score} pts");
+            Console.WriteLine($"{game.Date.ToString("MMMM d, yyyy")}, Time Taken: {game.TimeToComplete.Minutes} min {game.TimeToComplete.Seconds} sec - {game.Type}: {game.Score} pts");
         }
         Console.WriteLine("--------------------------------------------------------- \n");
     }
-    internal static void AddToHistory(int score, GameType gameType)
+    internal static void AddToHistory(int score, GameType gameType, TimeSpan timeToComplete)
     {
         games.Add(new Game
         {
             Date = DateTime.Now,
             Score = score,
-            Type = gameType
+            Type = gameType,
+            TimeToComplete = timeToComplete
         });
     }
     internal static int[] GetDivisionNumbers()
@@ -89,6 +90,7 @@ internal class Helpers
         Console.WriteLine("---------------------------------------------------------");
         return name;
     }
+    //Set game difficulty based on user inputs
     internal static GameDifficulty SetDifficulty()
     {
         int result = 0;

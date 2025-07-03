@@ -12,3 +12,4 @@ C:\The Nigerian Nerd\Programming\001-CalculatorConsoleGame\CalculatorConsoleChal
 C:\The Nigerian Nerd\Programming\001-CalculatorConsoleGame\CalculatorConsoleChallenge\obj\Debug\net9.0\CalculatorConsoleChallenge.pdb
 C:\The Nigerian Nerd\Programming\001-CalculatorConsoleGame\CalculatorConsoleChallenge\obj\Debug\net9.0\CalculatorConsoleChallenge.genruntimeconfig.cache
 C:\The Nigerian Nerd\Programming\001-CalculatorConsoleGame\CalculatorConsoleChallenge\obj\Debug\net9.0\ref\CalculatorConsoleChallenge.dll
+C:\The Nigerian Nerd\Programming\001-CalculatorConsoleGame\CalculatorConsoleChallenge\obj\Debug\net9.0\CalculatorConsoleChallenge.sourcelink.json

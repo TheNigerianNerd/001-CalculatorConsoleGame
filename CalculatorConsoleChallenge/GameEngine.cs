@@ -2,17 +2,21 @@ using System.Diagnostics;
 
 internal class GameEngine
 {
+    Stopwatch gameTimer = new();
+    TimeSpan timeToComplete = new();
     internal void DivisionGame(GameDifficulty difficulty)
     {
         var random = new Random();
         int firstNumber;
         int secondNumber;
         int score = 0;
+        //Measure the time it takes the user to enter their input
+        gameTimer.Start();
         for (int i = 0; i < 5; i++)
         {
             Console.Clear();
 
-             //Set difficulty based on  input parameter 'difficulty'
+            //Set difficulty based on  input parameter 'difficulty'
             switch (difficulty)
             {
                 case GameDifficulty.Easy:
@@ -27,7 +31,7 @@ internal class GameEngine
                     firstNumber = random.Next(1, 999);
                     secondNumber = random.Next(1, 999);
                     break;
-            }        
+            }
 
             int[] divisionNumbers = Helpers.GetDivisionNumbers();
             firstNumber = divisionNumbers[0];
@@ -60,7 +64,12 @@ internal class GameEngine
                 Console.ReadLine();
             }
         }
-        Helpers.AddToHistory(score, GameType.Division);
+        //Sop timer to take user input
+        gameTimer.Stop();
+        //Measure and store the total time of completion
+        timeToComplete = TimeSpan.FromSeconds(gameTimer.Elapsed.TotalSeconds);
+
+        Helpers.AddToHistory(score, GameType.Division, timeToComplete);
     }
 
     internal void MultiplicationGame(GameDifficulty difficulty)
@@ -70,11 +79,12 @@ internal class GameEngine
         int secondNumber = 0;
 
         int score = 0;
+        gameTimer.Start();
         for (int i = 0; i < 5; i++)
         {
             Console.Clear();
 
-             //Set difficulty based on  input parameter 'difficulty'
+            //Set difficulty based on  input parameter 'difficulty'
             switch (difficulty)
             {
                 case GameDifficulty.Easy:
@@ -89,7 +99,7 @@ internal class GameEngine
                     firstNumber = random.Next(1, 999);
                     secondNumber = random.Next(1, 999);
                     break;
-            }        
+            }
 
             Console.WriteLine($"{firstNumber} * {secondNumber}");
             var result = Console.ReadLine();
@@ -115,7 +125,9 @@ internal class GameEngine
                 Console.ReadLine();
             }
         }
-        Helpers.AddToHistory(score, GameType.Multiplication);
+        gameTimer.Stop();
+        timeToComplete = TimeSpan.FromSeconds(gameTimer.Elapsed.TotalSeconds);
+        Helpers.AddToHistory(score, GameType.Multiplication, timeToComplete);
     }
 
     internal void SubtractionGame(GameDifficulty difficulty)
@@ -124,11 +136,12 @@ internal class GameEngine
         int firstNumber = 0;
         int secondNumber = 0;
         int score = 0;
+        gameTimer.Start();
         for (int i = 0; i < 5; i++)
         {
             Console.Clear();
 
-             //Set difficulty based on  input parameter 'difficulty'
+            //Set difficulty based on  input parameter 'difficulty'
             switch (difficulty)
             {
                 case GameDifficulty.Easy:
@@ -143,7 +156,7 @@ internal class GameEngine
                     firstNumber = random.Next(1, 999);
                     secondNumber = random.Next(1, 999);
                     break;
-            }        
+            }
 
             Console.WriteLine($"{firstNumber} - {secondNumber}");
             var result = Console.ReadLine();
@@ -169,7 +182,10 @@ internal class GameEngine
                 Console.ReadLine();
             }
         }
-        Helpers.AddToHistory(score, GameType.Subtraction);
+        gameTimer.Stop();
+        
+        timeToComplete = TimeSpan.FromSeconds(gameTimer.Elapsed.TotalSeconds);
+        Helpers.AddToHistory(score, GameType.Subtraction, timeToComplete);
     }
 
     internal void AdditionGame(GameDifficulty difficulty)
@@ -178,6 +194,8 @@ internal class GameEngine
         int firstNumber = 0;
         int secondNumber = 0;
         int score = 0;
+
+        gameTimer.Start();
         for (int i = 0; i < 5; i++)
         {
             Console.Clear();
@@ -197,7 +215,7 @@ internal class GameEngine
                     firstNumber = random.Next(1, 999);
                     secondNumber = random.Next(1, 999);
                     break;
-            }          
+            }
 
             Console.WriteLine($"{firstNumber} + {secondNumber}");
             var result = Console.ReadLine();
@@ -222,6 +240,8 @@ internal class GameEngine
                 Console.ReadLine();
             }
         }
-        Helpers.AddToHistory(score, GameType.Addition);
+        gameTimer.Stop();
+        timeToComplete = TimeSpan.FromSeconds(gameTimer.Elapsed.TotalSeconds);
+        Helpers.AddToHistory(score, GameType.Addition, timeToComplete);
     }
 }
