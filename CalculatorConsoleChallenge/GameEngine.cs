@@ -66,7 +66,7 @@ internal class GameEngine
         }
         //Sop timer to take user input
         gameTimer.Stop();
-        
+
         //Measure and store the total time of completion
         timeToComplete = TimeSpan.FromSeconds(gameTimer.Elapsed.TotalSeconds);
 
@@ -129,7 +129,7 @@ internal class GameEngine
             }
         }
         gameTimer.Stop();
-        
+
         timeToComplete = TimeSpan.FromSeconds(gameTimer.Elapsed.TotalSeconds);
 
         gameTimer.Reset();
@@ -152,15 +152,15 @@ internal class GameEngine
             {
                 case GameDifficulty.Easy:
                     firstNumber = random.Next(1, 9);
-                    secondNumber = random.Next(1, 9);
+                    secondNumber = random.Next(1, firstNumber);
                     break;
                 case GameDifficulty.Medium:
                     firstNumber = random.Next(1, 99);
-                    secondNumber = random.Next(1, 99);
+                    secondNumber = random.Next(1, firstNumber);
                     break;
                 case GameDifficulty.Hard:
                     firstNumber = random.Next(1, 999);
-                    secondNumber = random.Next(1, 999);
+                    secondNumber = random.Next(1, firstNumber);
                     break;
             }
 
@@ -169,7 +169,7 @@ internal class GameEngine
 
             result = Helpers.ValidateResult(result);
 
-            //todo-refactor subtraction to limit the occurence of negative results
+            //DONE-refactor subtraction to limit the occurence of negative results
             if (int.Parse(result) == firstNumber - secondNumber)
             {
                 score += 10;
@@ -189,7 +189,7 @@ internal class GameEngine
             }
         }
         gameTimer.Stop();
-        
+
         timeToComplete = TimeSpan.FromSeconds(gameTimer.Elapsed.TotalSeconds);
 
         gameTimer.Reset();
@@ -249,7 +249,7 @@ internal class GameEngine
             }
         }
         gameTimer.Stop();
-        
+
         timeToComplete = TimeSpan.FromSeconds(gameTimer.Elapsed.TotalSeconds);
 
         gameTimer.Reset();
