@@ -4,7 +4,7 @@ internal class GameEngine
 {
     Stopwatch gameTimer = new();
     TimeSpan timeToComplete = new();
-    internal void DivisionGame(GameDifficulty difficulty)
+    internal void DivisionGame(GameDifficulty difficulty, int rounds = 5)
     {
         var random = new Random();
         int firstNumber;
@@ -12,7 +12,7 @@ internal class GameEngine
         int score = 0;
         //Measure the time it takes the user to enter their input
         gameTimer.Start();
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < rounds; i++)
         {
             Console.Clear();
 
@@ -66,13 +66,16 @@ internal class GameEngine
         }
         //Sop timer to take user input
         gameTimer.Stop();
+        
         //Measure and store the total time of completion
         timeToComplete = TimeSpan.FromSeconds(gameTimer.Elapsed.TotalSeconds);
+
+        gameTimer.Reset();
 
         Helpers.AddToHistory(score, GameType.Division, timeToComplete);
     }
 
-    internal void MultiplicationGame(GameDifficulty difficulty)
+    internal void MultiplicationGame(GameDifficulty difficulty, int rounds = 5)
     {
         var random = new Random();
         int firstNumber = 0;
@@ -80,7 +83,7 @@ internal class GameEngine
 
         int score = 0;
         gameTimer.Start();
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < rounds; i++)
         {
             Console.Clear();
 
@@ -126,18 +129,21 @@ internal class GameEngine
             }
         }
         gameTimer.Stop();
+        
         timeToComplete = TimeSpan.FromSeconds(gameTimer.Elapsed.TotalSeconds);
+
+        gameTimer.Reset();
         Helpers.AddToHistory(score, GameType.Multiplication, timeToComplete);
     }
 
-    internal void SubtractionGame(GameDifficulty difficulty)
+    internal void SubtractionGame(GameDifficulty difficulty, int rounds = 5)
     {
         var random = new Random();
         int firstNumber = 0;
         int secondNumber = 0;
         int score = 0;
         gameTimer.Start();
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < rounds; i++)
         {
             Console.Clear();
 
@@ -185,10 +191,12 @@ internal class GameEngine
         gameTimer.Stop();
         
         timeToComplete = TimeSpan.FromSeconds(gameTimer.Elapsed.TotalSeconds);
+
+        gameTimer.Reset();
         Helpers.AddToHistory(score, GameType.Subtraction, timeToComplete);
     }
 
-    internal void AdditionGame(GameDifficulty difficulty)
+    internal void AdditionGame(GameDifficulty difficulty, int rounds = 5)
     {
         var random = new Random();
         int firstNumber = 0;
@@ -196,7 +204,7 @@ internal class GameEngine
         int score = 0;
 
         gameTimer.Start();
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < rounds; i++)
         {
             Console.Clear();
 
@@ -241,7 +249,49 @@ internal class GameEngine
             }
         }
         gameTimer.Stop();
+        
         timeToComplete = TimeSpan.FromSeconds(gameTimer.Elapsed.TotalSeconds);
+
+        gameTimer.Reset();
         Helpers.AddToHistory(score, GameType.Addition, timeToComplete);
+    }
+
+    internal void RandomGame(GameDifficulty difficulty, int rounds = 1)
+    {
+        var random = new Random();
+        int firstNumber = 0;
+        int secondNumber = 0;
+        int score = 0;
+
+        int randomGame = 0;
+        for (int i = 0; i < 5; i++)
+        {
+            //Generate a random number related to a game operation i.e. addition = 1, subtraction = 2 etc 
+            //Random games only run one repetition of a random operation e.g. AdditionGame(difficulty, 1); '1' refers to the number of rounds.
+            randomGame = random.Next(1, 4);
+
+            switch (randomGame)
+            {
+                case 1:
+                    AdditionGame(difficulty, rounds);
+                    break;
+
+                case 2:
+                    SubtractionGame(difficulty, rounds);
+                    break;
+
+                case 3:
+                    MultiplicationGame(difficulty, rounds);
+                    break;
+
+                case 4:
+                    DivisionGame(difficulty, rounds);
+                    break;
+            }
+        }
+
+        //gameTimer.Start();
+
+        //gameTimer.Start();
     }
 }

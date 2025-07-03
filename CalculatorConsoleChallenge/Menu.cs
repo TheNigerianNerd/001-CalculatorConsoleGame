@@ -23,6 +23,7 @@ internal class Menu
             S - Subtraction
             M - Multiplication
             D - Division
+            R - Random Game Operation
             Q - Quit the program");
             Console.WriteLine("------------------------------------------------------------");
 
@@ -46,6 +47,9 @@ internal class Menu
                     break;
                 case "d":
                     Engine.DivisionGame(difficulty);
+                    break;
+                case "r":
+                    Engine.RandomGame(difficulty);
                     break;
                 case "q":
                     isGameOn = false;
